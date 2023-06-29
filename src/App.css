@@ -3,3 +3,8 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+.loginBtn:hover {
+  color: white;
+  background-color: rgb(54, 54, 250) !important;
+}

@@ -1,10 +1,12 @@
 import HotelCard from "../Components/HotelCard";
-import { Container, Grid } from "@mui/material";
+import { Container, Grid, Typography } from "@mui/material";
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { useLocation } from "react-router";
 
 const Home = () => {
   const [hotels, setHotels] = useState([]);
+  const locationInfo = useLocation();
 
   useEffect(() => {
     axios
@@ -20,6 +22,7 @@ const Home = () => {
   return (
     <>
       <Container maxWidth="lg" sx={{ mt: 10 }}>
+        <Typography>Welcome {locationInfo.state.userName}</Typography>
         <Grid container spacing={3}>
           {hotels.map((hotel) => {
             return (

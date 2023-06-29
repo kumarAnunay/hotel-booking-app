@@ -6,8 +6,11 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import AccountCircle from "@mui/icons-material/AccountCircle";
+// import { useLocation } from "react-router";
 
 const NavBar = () => {
+  // const locationInfo = useLocation();
+
   return (
     <>
       <AppBar component="nav">
