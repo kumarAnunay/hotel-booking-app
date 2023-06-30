@@ -3,6 +3,7 @@ import { Container, Grid, Typography } from "@mui/material";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router";
+import NavBar from "../Components/NavBar";
 
 const Home = () => {
   const [hotels, setHotels] = useState([]);
@@ -21,6 +22,7 @@ const Home = () => {
 
   return (
     <>
+      <NavBar />
       <Container maxWidth="lg" sx={{ mt: 10 }}>
         <Typography>Welcome {locationInfo.state.userName}</Typography>
         <Grid container spacing={3}>

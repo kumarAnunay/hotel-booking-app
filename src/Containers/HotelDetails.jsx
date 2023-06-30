@@ -2,6 +2,7 @@ import { Container, Grid, Typography } from "@mui/material";
 import { useParams } from "react-router";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import NavBar from "../Components/NavBar";
 
 const HotelDetails = () => {
   const params = useParams();
@@ -19,28 +20,31 @@ const HotelDetails = () => {
   }, [params.slug]);
 
   return (
-    <Container maxWidth="lg" sx={{ marginTop: 10 }}>
-      <Typography variant="h4">{hotelInfo.name}</Typography>
-      <Grid container justifyContent={"center"}>
-        {hotelInfo.images?.map((image) => {
-          return (
-            <Grid key={image.id} item lg={4}>
-              <img
-                src={image.img}
-                alt="Hotel"
-                style={{
-                  width: "95%",
-                  borderRadius: "5px",
-                  boxShadow: "5px 5px 5px grey",
-                  margin: "10px",
-                  height: "200px",
-                }}
-              />
-            </Grid>
-          );
-        })}
-      </Grid>
-    </Container>
+    <>
+      <NavBar />
+      <Container maxWidth="lg" sx={{ marginTop: 10 }}>
+        <Typography variant="h4">{hotelInfo.name}</Typography>
+        <Grid container justifyContent={"center"}>
+          {hotelInfo.images?.map((image) => {
+            return (
+              <Grid key={image.id} item lg={4}>
+                <img
+                  src={image.img}
+                  alt="Hotel"
+                  style={{
+                    width: "95%",
+                    borderRadius: "5px",
+                    boxShadow: "5px 5px 5px grey",
+                    margin: "10px",
+                    height: "200px",
+                  }}
+                />
+              </Grid>
+            );
+          })}
+        </Grid>
+      </Container>
+    </>
   );
 };
 
