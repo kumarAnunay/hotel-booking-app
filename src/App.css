@@ -4,7 +4,23 @@
   box-sizing: border-box;
 }
 
+.userName {
+  text-align: center;
+  font-size: 30px !important;
+  text-shadow: 0 0 1px blue;
+  font-family: sans-serif !important;
+}
+
 .loginBtn:hover {
   color: white;
   background-color: rgb(54, 54, 250) !important;
+}
+
+.text {
+  color: red;
+}
+
+.logoutBtn:hover {
+  background-color: white !important;
+  color: rgb(54, 54, 250);
 }

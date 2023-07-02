@@ -5,11 +5,22 @@ import Typography from "@mui/material/Typography";
 import MenuIcon from "@mui/icons-material/Menu";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
-import AccountCircle from "@mui/icons-material/AccountCircle";
-// import { useLocation } from "react-router";
+import { auth } from "../firebase";
+import { useNavigate } from "react-router";
 
 const NavBar = () => {
-  // const locationInfo = useLocation();
+  const navigate = useNavigate();
+
+  const logOutHandler = () => {
+    auth
+      .signOut()
+      .then(() => {
+        navigate("/");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
   return (
     <>
@@ -33,16 +44,13 @@ const NavBar = () => {
           </Typography>
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             <Button sx={{ color: "#fff" }}>Home</Button>
-            <IconButton
-              size="large"
-              edge="end"
-              aria-label="account of current user"
-              aria-haspopup="true"
-              //   onClick={handleProfileMenuOpen}
-              color="inherit"
+            <Button
+              sx={{ color: "#fff", border: "1px solid white", padding: "8px" }}
+              className="logoutBtn"
+              onClick={logOutHandler}
             >
-              <AccountCircle />
-            </IconButton>
+              Logout
+            </Button>
           </Box>
         </Toolbar>
       </AppBar>

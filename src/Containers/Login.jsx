@@ -1,10 +1,9 @@
 import { Button, Container, Grid, TextField } from "@mui/material";
-
 import GoogleIcon from "@mui/icons-material/Google";
 import { signInWithPopup } from "@firebase/auth";
 import { auth, provider } from "../firebase";
 import { useNavigate } from "react-router";
-import { useState } from "react";
+// import { useState } from "react";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -24,22 +23,23 @@ const Login = () => {
       });
   };
 
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  //For default login email and password
+  // const [email, setEmail] = useState("");
+  // const [password, setPassword] = useState("");
 
-  const handleLogin = () => {
-    console.log(email, password);
-    if (email === "abcd@email.com" && password === "12345") {
-      navigate("/home");
-    } else {
-      alert("Invalid username or password");
-    }
-  };
+  // const handleLogin = () => {
+  //   console.log(email, password);
+  //   if (email === "abcd@email.com" && password === "12345") {
+  //     navigate("/home");
+  //   } else {
+  //     alert("Invalid username or password");
+  //   }
+  // };
 
   return (
     <>
-      <Container sx={{ mt: 10 }}>
-        <Grid
+      <Container>
+        {/* <Grid
           alignItems="center"
           justifyContent="center"
           container
@@ -65,7 +65,7 @@ const Login = () => {
               Login
             </Button>
           </Grid>
-        </Grid>
+        </Grid> */}
         <Grid
           alignItems="center"
           justifyContent="center"
@@ -87,8 +87,9 @@ const Login = () => {
                 justifyContent: "center",
                 alignItems: "center",
               }}
+              className="loginBtn"
             >
-              <GoogleIcon sx={{ mr: 5 }} />
+              <GoogleIcon sx={{ mr: 5 }} className="text" />
               <span>Signin with Google</span>
             </button>
           </Grid>

@@ -24,7 +24,9 @@ const Home = () => {
     <>
       <NavBar />
       <Container maxWidth="lg" sx={{ mt: 10 }}>
-        <Typography>Welcome {locationInfo.state.userName}</Typography>
+        <Typography className="userName">
+          Welcome {locationInfo.state.userName}
+        </Typography>
         <Grid container spacing={3}>
           {hotels.map((hotel) => {
             return (
