@@ -8,7 +8,7 @@ import Layout from './Containers/Layout';
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
+      <BrowserRouter basename="https://hotel-booking-app-basic.netlify.app/">
         <Routes>
           <Route path="/" element={<Login />}></Route>
           <Route path="/home" element={<Layout><Home /></Layout>}></Route>
