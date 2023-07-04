@@ -89,7 +89,7 @@ const Login = () => {
               }}
               className="loginBtn"
             >
-              <GoogleIcon sx={{ mr: 5 }} className="text" />
+              <GoogleIcon sx={{ mr: 3 }} className="text" />
               <span>Signin with Google</span>
             </button>
           </Grid>
